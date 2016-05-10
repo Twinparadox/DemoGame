@@ -1,8 +1,9 @@
-class Things
+class Things // 물건 Class : 주식, 상품이 상속받음
 {
 protected:
-    short grade;
-    short ThingCode;
-    float Value;
-    
+	short grade; // 등급
+	short ThingCode; // 고유코드
+	float NowValue; // 현재가격
+	float FirstValue; // 최초가격
+	int amount; // 양
 };
