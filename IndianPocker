@@ -1,0 +1,143 @@
+#include <iostream>
+#include <cstring>
+#include <cstdlib>
+#include <ctime>
+#include <unistd.h>
+
+using namespace std;
+
+#define MINBET 10
+
+class Card
+{
+protected:
+    int card; // 1~10
+    
+public:
+    Card()
+    {
+        this->card=1+rand()%10;
+    }
+    int GetCard()
+    {
+        return this->card;
+    }
+    ~Card() {}
+};
+class Point
+{
+protected:
+    int now;
+    int bet;
+    
+public:
+    Point()
+    {
+        this->now=100;
+        this->bet=0;
+    }
+    
+    void SetBet(int bet)
+    {
+        this->bet+=bet;
+    }
+    void ClearBet()
+    {
+        this->bet=0;
+    }
+    
+    void SetPoint(int n)
+    {
+        this->now+=n;
+    }
+    int GetPoint()
+    {
+        return this->now;
+    }
+    
+    int GetBet()
+    {
+        return this->bet;
+    }
+    ~Point() {}
+};
+
+class Person : public Card, public Point
+{
+protected:
+    string Name;
+    
+public:
+    void SetName(string n)
+    {
+        this->Name=n;
+    }
+    string GetName()
+    {
+        return this->Name;
+    }
+    void Print()
+    {
+        cout<<GetCard()<<endl;
+        
+    }
+};
+
+class Com : public Card, public Point
+{
+public:
+    
+};
+
+int main(void)
+{
+    srand((unsigned)time(NULL));
+    
+    Person player;
+    sleep(0.001);
+    Com computer;
+    int race;
+    char yn;
+    string name;
+    
+    cout<<"User ID : ";
+    cin>>name;
+    player.SetName(name);
+    race=1;
+    
+    while(race<=3)
+    {
+        player.SetBet(MINBET);
+        player.SetPoint(-player.GetBet());
+        
+        computer.SetBet(MINBET);
+        computer.SetPoint(-computer.GetBet());
+        cout<<"User's Betting : "<<player.GetBet()<<endl;
+        cout<<"Computer's Betting : "<<computer.GetBet()<<endl;
+        cout<<"Computer's Card : "<<computer.GetCard()<<endl;
+        cout<<"Bet ? ( Y / N ) : ";
+        cin>>yn;
+        
+        if(yn=='N' || yn=='n')
+        {
+            if(player.GetCard()>computer.GetCard())
+            {
+                player.SetPoint(-player.GetBet());
+                player.SetBet(player.GetBet());
+            }
+            
+            computer.SetPoint(computer.GetBet()+player.GetBet());
+            player.ClearBet();
+            computer.ClearBet();
+            break;
+        }
+        race++;
+    }
+    
+    
+    cout<<player.GetCard()<<endl;
+    cout<<computer.GetCard()<<endl;
+    cout<<"User ID : "<<player.GetName()<<endl;
+    cout<<player.GetPoint()<<endl;
+    cout<<computer.GetPoint()<<endl;
+}
