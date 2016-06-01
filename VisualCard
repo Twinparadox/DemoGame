@@ -11,3 +11,18 @@ int main()
 	cout << "┃    ８┃" << endl;
 	cout << "┗━━━┛" << endl;
 }
+
+int main()
+{
+	cout << "┏━━━━━┓" << endl;
+	cout << "┃８        ┃" << endl;
+	cout << "┃          ┃" << endl;
+	cout << "┃  ♠  ♠  ┃" << endl;
+	cout << "┃          ┃" << endl;
+	cout << "┃  ♠  ♠  ┃" << endl;
+	cout << "┃          ┃" << endl;
+	cout << "┃  ♠  ♠  ┃" << endl;
+	cout << "┃          ┃" << endl;
+	cout << "┃        ８┃" << endl;
+	cout << "┗━━━━━┛" << endl;
+}
