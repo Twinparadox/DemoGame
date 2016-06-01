@@ -103,6 +103,24 @@ public:
 
 };
 
+
+/* Function Part */
+/* Will make the header */
+void BetInit(Person* player, Com* computer)
+{
+	/* Minimum Betting */
+	player->SetBet(MINBET);
+	player->SetPoint(-player->GetBet());
+	computer->SetBet(MINBET);
+	computer->SetPoint(-computer->GetBet());
+}
+
+void PrintBoard(const Person* const player, const Com* const computer)
+{
+
+}
+
+
 /* Main Function */
 int main(void)
 {
@@ -131,17 +149,14 @@ int main(void)
 	while (race <= 3)
 	{
 		/* Minimum Betting */
-		player.SetBet(MINBET);
-		player.SetPoint(-player.GetBet());
-		computer.SetBet(MINBET);
-		computer.SetPoint(-computer.GetBet());
+		if (race == 1)
+			BetInit(&player, &computer);
 
 		/* View User's Card and Com's */
 		/* Modulization */
 		cout << "User's Betting : " << player.GetBet() << endl;
 		cout << "Computer's Betting : " << computer.GetBet() << endl;
-		cout << "Computer's Card : " << computer.
-			GetCard() << endl;
+		cout << "Computer's Card : " << computer.GetCard() << endl;
 		cout << "배팅하시겠습니까 ? ( Y / N ) : ";
 		cin >> yn;
 
@@ -162,17 +177,36 @@ int main(void)
 			break;
 		}
 
-		/* If continue */
+		/* If continue Race */
 		else
 		{
 			cout << "얼마나 배팅하시겠습니까? > ";
 			cin >> betmoney;
 			player.SetBet(betmoney);
 			player.SetPoint(-betmoney);
+
+			/* Not AI */
+			computer.SetBet(betmoney);
+			computer.SetPoint(-betmoney);
 		}
 		race++;
+		system("cls");
 	}
 
+	/* User Win */
+	if (player.GetCard() > computer.GetCard())
+	{
+		player.SetPoint(player.GetBet() + computer.GetBet());
+		player.ClearBet();
+		computer.ClearBet();
+	}
+	/* Computer Win Not Perfect(Don't Except Draw) */
+	else
+	{
+		computer.SetPoint(player.GetBet() + computer.GetBet());
+		player.ClearBet();
+		computer.ClearBet();
+	}
 
 	/* Test Part */
 	cout << player.GetCard() << endl;
