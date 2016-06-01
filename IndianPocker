@@ -120,6 +120,147 @@ void PrintBoard(const Person* const player, const Com* const computer)
 
 }
 
+/* Print Card */
+/* Spade 1~10 */
+void PrintCard(int c)
+{
+	switch (c)
+	{
+	case 1:
+		cout << "┏━━━━━┓" << endl;
+		cout << "┃Ａ        ┃" << endl;
+		cout << "┃          ┃" << endl;
+		cout << "┃          ┃" << endl;
+		cout << "┃          ┃" << endl;
+		cout << "┃    ♠    ┃" << endl;
+		cout << "┃          ┃" << endl;
+		cout << "┃          ┃" << endl;
+		cout << "┃          ┃" << endl;
+		cout << "┃        Ａ┃" << endl;
+		cout << "┗━━━━━┛" << endl;
+		break;
+	case 2:
+		cout << "┏━━━━━┓" << endl;
+		cout << "┃２        ┃" << endl;
+		cout << "┃          ┃" << endl;
+		cout << "┃    ♠    ┃" << endl;
+		cout << "┃          ┃" << endl;
+		cout << "┃          ┃" << endl;
+		cout << "┃          ┃" << endl;
+		cout << "┃    ♠    ┃" << endl;
+		cout << "┃          ┃" << endl;
+		cout << "┃        ２┃" << endl;
+		cout << "┗━━━━━┛" << endl;
+		break;
+	case 3:
+		cout << "┏━━━━━┓" << endl;
+		cout << "┃３        ┃" << endl;
+		cout << "┃          ┃" << endl;
+		cout << "┃    ♠    ┃" << endl;
+		cout << "┃          ┃" << endl;
+		cout << "┃    ♠    ┃" << endl;
+		cout << "┃          ┃" << endl;
+		cout << "┃    ♠    ┃" << endl;
+		cout << "┃          ┃" << endl;
+		cout << "┃        ３┃" << endl;
+		cout << "┗━━━━━┛" << endl;
+		break;
+	case 4:
+		cout << "┏━━━━━┓" << endl;
+		cout << "┃４        ┃" << endl;
+		cout << "┃          ┃" << endl;
+		cout << "┃  ♠  ♠  ┃" << endl;
+		cout << "┃          ┃" << endl;
+		cout << "┃          ┃" << endl;
+		cout << "┃          ┃" << endl;
+		cout << "┃  ♠  ♠  ┃" << endl;
+		cout << "┃          ┃" << endl;
+		cout << "┃        ４┃" << endl;
+		cout << "┗━━━━━┛" << endl;
+		break;
+	case 5:
+		cout << "┏━━━━━┓" << endl;
+		cout << "┃５        ┃" << endl;
+		cout << "┃          ┃" << endl;
+		cout << "┃  ♠  ♠  ┃" << endl;
+		cout << "┃          ┃" << endl;
+		cout << "┃    ♠    ┃" << endl;
+		cout << "┃          ┃" << endl;
+		cout << "┃  ♠  ♠  ┃" << endl;
+		cout << "┃          ┃" << endl;
+		cout << "┃        ５┃" << endl;
+		cout << "┗━━━━━┛" << endl;
+		break;
+	case 6:
+		cout << "┏━━━━━┓" << endl;
+		cout << "┃６        ┃" << endl;
+		cout << "┃          ┃" << endl;
+		cout << "┃  ♠  ♠  ┃" << endl;
+		cout << "┃          ┃" << endl;
+		cout << "┃  ♠  ♠  ┃" << endl;
+		cout << "┃          ┃" << endl;
+		cout << "┃  ♠  ♠  ┃" << endl;
+		cout << "┃          ┃" << endl;
+		cout << "┃        ６┃" << endl;
+		cout << "┗━━━━━┛" << endl;
+		break;
+	case 7:
+		cout << "┏━━━━━┓" << endl;
+		cout << "┃７        ┃" << endl;
+		cout << "┃          ┃" << endl;
+		cout << "┃  ♠  ♠  ┃" << endl;
+		cout << "┃    ♠    ┃" << endl;
+		cout << "┃  ♠  ♠  ┃" << endl;
+		cout << "┃          ┃" << endl;
+		cout << "┃  ♠  ♠  ┃" << endl;
+		cout << "┃          ┃" << endl;
+		cout << "┃        ７┃" << endl;
+		cout << "┗━━━━━┛" << endl;
+		break;
+	case 8:
+		cout << "┏━━━━━┓" << endl;
+		cout << "┃８        ┃" << endl;
+		cout << "┃          ┃" << endl;
+		cout << "┃  ♠  ♠  ┃" << endl;
+		cout << "┃    ♠    ┃" << endl;
+		cout << "┃  ♠  ♠  ┃" << endl;
+		cout << "┃    ♠    ┃" << endl;
+		cout << "┃  ♠  ♠  ┃" << endl;
+		cout << "┃          ┃" << endl;
+		cout << "┃        ８┃" << endl;
+		cout << "┗━━━━━┛" << endl;
+		break;
+	case 9:
+		cout << "┏━━━━━┓" << endl;
+		cout << "┃９        ┃" << endl;
+		cout << "┃  ♠  ♠  ┃" << endl;
+		cout << "┃    ♠    ┃" << endl;
+		cout << "┃  ♠  ♠  ┃" << endl;
+		cout << "┃          ┃" << endl;
+		cout << "┃  ♠  ♠  ┃" << endl;
+		cout << "┃          ┃" << endl;
+		cout << "┃  ♠  ♠  ┃" << endl;
+		cout << "┃        ９┃" << endl;
+		cout << "┗━━━━━┛" << endl;
+		break;
+	case 10:
+		cout << "┏━━━━━┓" << endl;
+		cout << "┃10        ┃" << endl;
+		cout << "┃  ♠  ♠  ┃" << endl;
+		cout << "┃    ♠    ┃" << endl;
+		cout << "┃  ♠  ♠  ┃" << endl;
+		cout << "┃          ┃" << endl;
+		cout << "┃  ♠  ♠  ┃" << endl;
+		cout << "┃    ♠    ┃" << endl;
+		cout << "┃  ♠  ♠  ┃" << endl;
+		cout << "┃        10┃" << endl;
+		cout << "┗━━━━━┛" << endl;
+		break;
+	default:
+		break;
+	}
+}
+
 
 /* Main Function */
 int main(void)
@@ -139,7 +280,7 @@ int main(void)
 	/* User ID Setting */
 	cout << "User ID : ";
 	cin >> name;
-	player.SetName(name);
+	player.SetName(name); 
 
 	/* Initialize */
 	/* Need Init Module */
@@ -157,6 +298,7 @@ int main(void)
 		cout << "User's Betting : " << player.GetBet() << endl;
 		cout << "Computer's Betting : " << computer.GetBet() << endl;
 		cout << "Computer's Card : " << computer.GetCard() << endl;
+		PrintCard(computer.GetCard());
 		cout << "배팅하시겠습니까 ? ( Y / N ) : ";
 		cin >> yn;
 
@@ -210,7 +352,13 @@ int main(void)
 
 	/* Test Part */
 	cout << player.GetCard() << endl;
+	cout << "<<USER's Card>>" << endl;
+	PrintCard(player.GetCard());
+	
 	cout << computer.GetCard() << endl;
+	cout << "<<COM's Card>>" << endl;
+	PrintCard(computer.GetCard());
+
 	cout << "User ID : " << player.GetName() << endl;
 	cout << player.GetPoint() << endl;
 	cout << computer.GetPoint() << endl;
